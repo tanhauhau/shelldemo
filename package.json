@@ -1,0 +1,25 @@
+{
+  "name": "shelldemo",
+  "version": "1.0.0",
+  "description": "express middleware for demo of command line application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanhauhau/shelldemo.git"
+  },
+  "keywords": [
+    "express",
+    "middleware",
+    "shell",
+    "subprocess"
+  ],
+  "author": "Tan Li Hau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanhauhau/shelldemo/issues"
+  },
+  "homepage": "https://github.com/tanhauhau/shelldemo#readme"
+}
