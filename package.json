@@ -1,6 +1,6 @@
 {
   "name": "shelldemo",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "express middleware for demo of command line application",
   "main": "index.js",
   "scripts": {
