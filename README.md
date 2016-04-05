@@ -14,7 +14,7 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
-var demo = require('express-shell-middleware');
+var demo = require('shelldemo');
 
 // create a new command line application with name, path, arguments
 var java = demo.createJava('java', io, path.resolve(__dirname + './../code/java/SimpleJava.jar'), ['asf']);
