@@ -1,6 +1,11 @@
-# express-shell-middleware [Work in Progress]
+# shelldemo [Work in Progress]
 
-A command line application on your browser + An express middleware = express-shell-middleware
+A command line application on your browser + An express middleware
+
+## Installation
+
+` npm install --save shelldemo `
+
 
 ## Usage Demo
 ```javascript
