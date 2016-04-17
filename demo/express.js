@@ -3,12 +3,18 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var path = require('path');
-var demo = require('../lib/out/index.js');
+var demo = require('../lib/out/server.js');
 
-var java = demo.createJava('java', io, path.resolve(__dirname + './../code/java/SimpleJava.jar'), ['asf']);
-var python = demo.createPython('python', io, path.resolve(__dirname + './../code/python/simplepython.py'), ['zxc', '-u']);
+app.use('/javaDemo', demo.createJava(io, {
+        name: 'javaDemo',
+        jarfile: path.resolve(__dirname + './../code/java/SimpleJava.jar'),
+        arg: ['asf']
+    }));
 
-app.use('/java', java.router);
-app.use('/python', python.router);
+app.use('/python', demo.createPython(io, {
+        name: 'Simple Python Demo',
+        pyfile: path.resolve(__dirname + './../code/python/simplepython.py'),
+        arg: ['zxc', '-u']
+    }));
 
 http.listen(8000);

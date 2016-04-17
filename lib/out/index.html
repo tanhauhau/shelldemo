@@ -12,6 +12,7 @@
         form input { border: 0; padding: 10px; width: 90%; margin-right: .5%; }
         form input:focus { outline: none; }
         span.error { color: rgb(180,0,0);}
+        span.exit { color: rgb(178, 0, 255);}
         </style>
     </head>
     <body>
@@ -22,38 +23,5 @@
     </body>
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script>
-        $(function(){
-            function joinServer(id){
-                var socket = io('/{{name}}/' + id);
-                socket.on("stdout", function(data){
-                    console.log('stdout' + data);
-                    $("#term").append(data.replace(/\n/g, '<br/>'));
-                    $('#term').scrollTop($('#term')[0].scrollHeight);
-                });
-                socket.on("stderr", function(data){
-                    console.log('stderr' + data);
-                    $("#term").append('<span class="error">' + data.replace(/\n/g, '<br/>') + "</span>");
-                    $('#term').scrollTop($('#term')[0].scrollHeight);
-                });
-                $("#input").submit(function(event){
-                    socket.emit('stdin', $('#m').val());
-                    $('#m').val('');
-                    return false;
-                });
-                $("#m").removeAttr('disabled');
-            }
-            $.post('/{{name}}/create', {
-                    a: 'a',
-                    b: 'b',
-            }, 'json')
-            .done(function(data){
-                joinServer(data);
-            })
-            .fail(function(){
-                alert('Server error');
-                console.log("failed");
-            });
-        });
-    </script>
+    <script src="client.js"></script>
 </html>

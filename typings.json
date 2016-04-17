@@ -1,11 +1,14 @@
 {
   "ambientDependencies": {
+    "camelcase": "registry:dt/camelcase#0.0.0+20160316155526",
     "express": "registry:dt/express#4.0.0+20160317120654",
+    "jquery": "registry:dt/jquery#1.10.0+20160316155526",
     "mustache": "registry:dt/mustache#0.8.2+20160316155526",
     "node": "registry:dt/node#4.0.0+20160330064709",
     "require": "registry:dt/require#2.1.20+20160316155526",
     "shortid": "registry:dt/shortid#0.0.0+20160316155526",
-    "socket.io": "registry:dt/socket.io#1.4.4+20160317120654"
+    "socket.io": "registry:dt/socket.io#1.4.4+20160317120654",
+    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20160317120654"
   },
   "dependencies": {
     "requirejs": "registry:npm/requirejs#2.2.0+20160319062357"
